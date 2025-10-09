@@ -225,6 +225,24 @@
 	webfont = "Dancing Script"
 	uses_handwriting = 1
 
+/obj/item/pen/fancier
+	name = "fancier pen"
+	desc = "A rare pen from National Notary's Universal Collection. Looks like the 'Emperor' model with the Iridium Nib and African Blackwood barrel."
+	icon_state = "pen_fancy"
+	item_state = "pen_fancy"
+	color = "#D4AF37"
+	font_color = "#D4AF37"
+	font = "'Dancing Script', cursive"
+	webfont = "Dancing Script"
+	uses_handwriting = 1
+	mat_changename = 0
+	color_name = "golden"
+	material_uses = 123456 // it's not plated. its solid gold-wax alloy!
+
+	New()
+		..()
+		src.setMaterial(getMaterial("gold"))
+
 /obj/item/pen/odd
 	name = "odd pen"
 	desc = "There's something strange about this pen. Inscriptions indicate it is a National Notary 'Francis Scott' model with an electrum nib and lignum vitae barrel. Huh."
