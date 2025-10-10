@@ -15,7 +15,7 @@ var/global/list/queue_stat_list = list()
 #endif
 
 // dumb, bad
-var/list/extra_resources = list('interface/fonts/pressstart2p.ttf', 'interface/fonts/ibmvga9.ttf', 'interface/fonts/xfont.ttf', 'interface/fonts/statusdisp.ttf')
+var/list/extra_resources = list('interface/fonts/pressstart2p.ttf', 'interface/fonts/ibmvga9.ttf', 'interface/fonts/xfont.ttf', 'interface/fonts/statusdisp.ttf', 'interface/fonts/MonsieurLaDoulaise-Regular.ttf', 'interface/fonts/Bevan.ttf')
 // Press Start 2P - 6px
 // PxPlus IBM VGA9 - 12px
 
@@ -154,6 +154,7 @@ var/global
 	"Architects Daughter",
 	"Arizonia",
 	"Bad Script",
+	"Bevan",
 	"Bilbo Swash Caps",
 	"Bilbo",
 	"Calligraffitti",
@@ -202,6 +203,7 @@ var/global
 	"Merienda One",
 	"Merienda",
 	"Molle",
+	"Monsieur La Doulaise",
 	"Montez",
 	"Mr Dafoe",
 	"Mr De Haviland",
