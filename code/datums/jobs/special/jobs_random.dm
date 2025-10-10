@@ -126,8 +126,9 @@ ABSTRACT_TYPE(/datum/job/special/random)
 	slot_eyes = list(/obj/item/clothing/glasses/monocle)
 	slot_foot = list(/obj/item/clothing/shoes/black)
 	slot_lhan = list(/obj/item/storage/secure/sbriefcase)
+	slot_rhan = list(/obj/item/pen/fancier) // starts with the fanciest pen
 	items_in_backpack = list(/obj/item/baton/cane)
-	alt_names = list("Senator", "President", "Board Member", "Mayor", "Vice-President", "Governor")
+	// commenting out just to make it consistent for testing: alt_names = list("Senator", "President", "Board Member", "Mayor", "Vice-President", "Governor")
 	wiki_link = "https://wiki.ss13.co/VIP"
 
 	special_setup(var/mob/living/carbon/human/M)
@@ -185,6 +186,7 @@ ABSTRACT_TYPE(/datum/job/special/random)
 	access_string = "Diplomat"
 	request_limit = 0 // you don't request them, they come to you
 	slot_lhan = list(/obj/item/storage/briefcase)
+	slot_rhan = list(/obj/item/pen/fancier) //dignitaries also start with the fanciest pen
 	slot_jump = list(/obj/item/clothing/under/misc/lawyer)
 	slot_foot = list(/obj/item/clothing/shoes/brown)
 	alt_names = list("Diplomat", "Ambassador")

@@ -232,9 +232,9 @@
 	item_state = "pen_fancy"
 	color = "#D4AF37"
 	font_color = "#FFD700"
-	font = "'Bevan', regular"
-	webfont = "Bevan"
-	uses_handwriting = 1
+	font = "'Monsieur La Doulaise', regular"
+	webfont = "Monsieur La Doulaise"
+	uses_handwriting = 1 //turns out this isn't used at the moment, once part of old post-its code; future rework project.
 	mat_changename = 0
 	color_name = "golden"
 	material_uses = 123456 // it's not plated. its solid gold-wax alloy!
