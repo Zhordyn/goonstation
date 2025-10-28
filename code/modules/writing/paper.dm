@@ -607,6 +607,17 @@
 	update()
 		tooltip_rebuild = TRUE
 
+/obj/item/paper_bin/contraband_paper
+	name = "contraband assessment form tray"
+	desc = "A tray full of forms for assessing confiscated contraband."
+	icon = 'icons/obj/writing.dmi'
+	icon_state = "artifact_form_tray"
+	amount_left = INFINITY
+	bin_type = /obj/item/sticker/postit/contraband_paper
+
+	update()
+		tooltip_rebuild = TRUE
+
 /obj/item/paper_bin/proc/update()
 	tooltip_rebuild = TRUE
 	src.icon_state = "paper_bin[(src.amount_left || locate(bin_type, src)) ? "1" : null]"

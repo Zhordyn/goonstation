@@ -11,14 +11,15 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 // TODO: change usages to be theme-based rather than override color here
-const paperColor = 'BabyPink'; //TODO: Pick a better red for sec
+const paperColor = '#fdbfbfff'; // TODO: Pick a better red for sec
 
 interface ContrabandPaperData {
   contrabandName: string;
   contrabandOrigin: string;
-  contrabandValue: number;
+  contrabandValue: string;
   contrabandType: string;
   contrabandDetails: string;
+  allContrabandValues: string[];
   crossed: string[];
 }
 
@@ -30,6 +31,7 @@ export const ContrabandPaper = () => {
     contrabandValue,
     contrabandType,
     contrabandDetails,
+    allContrabandValues,
     crossed,
   } = data;
 
@@ -37,8 +39,8 @@ export const ContrabandPaper = () => {
     <Window
       title="Nanotrasen Contraband Assessment Form"
       theme="paper"
-      width={800}
-      height={835}
+      width={500}
+      height={600}
     >
       <Window.Content backgroundColor={paperColor}>
         <Section backgroundColor={paperColor}>
@@ -54,13 +56,15 @@ export const ContrabandPaper = () => {
           />
           <h3>Contraband Level</h3>
           <Flex direction={'column'} wrap={'wrap'} height={3}>
-            <Flex.Item
-              key={0,1,2,3,4,5,6,7,8,9,10}
-              onClick={(e, value) => act('value', { newValue: x })}
-            >
-              <Button.Checkbox checked={contrabandValue === x} />
-              <span>{crossed.includes(x) ? <s>{x}</s> : x}</span>
-            </Flex.Item>
+            {allContrabandValues.map((x) => (
+              <Flex.Item
+                key={x}
+                onClick={(e, value) => act('value', { newValue: x })}
+              >
+                <Button.Checkbox checked={contrabandValue === x} />
+                <span>{crossed.includes(x) ? <s>{x}</s> : x}</span>
+              </Flex.Item>
+            ))}
           </Flex>
           <h3>Contraband Type</h3>
           <TextArea

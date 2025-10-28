@@ -49,7 +49,7 @@
 			A.AddComponent(/datum/component/contraband, 0, 0)
 		SEND_SIGNAL(src.attached, COMSIG_MOVABLE_CONTRABAND_CHANGED, TRUE)
 		if(isobj(A))
-			src.updateTypeLabel(src.artifactType)
+			src.updateTypeLabel(src.contrabandType)
 
 	attackby(obj/item/W, mob/living/user)
 		if(istype(W, /obj/item/pen)) // write on it
@@ -85,9 +85,8 @@
 
 	ui_static_data(mob/user)
 		. = list(
-			"allArtifactOrigins" = artifact_controls.artifact_origin_names,
-			"allArtifactTypes" = artifact_controls.artifact_type_names,
-			"allArtifactTriggers" = artifact_controls.artifact_trigger_names
+			"allContrabandValues" = list("zero", "one", "two", "three")
+			// "allContrabandsValues" = artifact_controls.artifact_origin_names
 		)
 
 	ui_act(action, params)
@@ -124,12 +123,10 @@
 				else
 					crossed -= params["newType"]
 					src.updateTypeLabel(params["newType"])
-					artifactType = params["newType"]
+					contrabandType = params["newType"]
 			if("detail")
-				artifactDetails = params["newDetail"]
+				contrabandDetails = params["newDetail"]
 		. = TRUE
-		if(O)
-			src.checkArtifactVars(O)
 
 	ui_data(mob/user)
 		. = list(
@@ -148,6 +145,7 @@
 		src.removeTypeLabel()
 		. = ..()
 
+//TODO review about adding type name/removing type name
 	/// updates the label that shows what type the artifact supposedly is
 	proc/updateTypeLabel(var/newtype)
 		// nothing to set, so no need!
@@ -155,7 +153,7 @@
 			return
 		if(isobj(src.attached))
 			var/obj/O = src.attached
-			O.remove_suffixes("\[[src.artifactType]\]")
+			O.remove_suffixes("\[[src.contrabandType]\]")
 			O.name_suffix("\[[newtype]\]")
 			O.UpdateName()
 
@@ -163,5 +161,5 @@
 	proc/removeTypeLabel()
 		if(isobj(src.attached))
 			var/obj/O = src.attached
-			O.remove_suffixes("\[[src.artifactType]\]")
+			O.remove_suffixes("\[[src.contrabandType]\]")
 			O.UpdateName()

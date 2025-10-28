@@ -2441,6 +2441,7 @@
 #include "code\obj\item\cloths.dm"
 #include "code\obj\item\clown_items.dm"
 #include "code\obj\item\coin.dm"
+#include "code\obj\item\contrabandform.dm"
 #include "code\obj\item\dartboard.dm"
 #include "code\obj\item\decoration.dm"
 #include "code\obj\item\decorative_pot.dm"
