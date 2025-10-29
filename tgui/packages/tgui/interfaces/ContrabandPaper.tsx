@@ -11,7 +11,8 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 // TODO: change usages to be theme-based rather than override color here
-const paperColor = '#fdbfbfff'; // TODO: Pick a better red for sec
+const paperColor = '#ffe8e8ff';
+const fieldColor = '#fffdfdff';
 
 interface ContrabandPaperData {
   contrabandName: string;
@@ -52,7 +53,7 @@ export const ContrabandPaper = () => {
             fluid
             height={2}
             onBlur={(x) => act('origin', { newOrigin: x })}
-            backgroundColor={paperColor}
+            backgroundColor={fieldColor}
           />
           <h3>Contraband Level</h3>
           <Flex direction={'column'} wrap={'wrap'} height={3}>
@@ -70,17 +71,17 @@ export const ContrabandPaper = () => {
           <TextArea
             value={contrabandType}
             fluid
-            height={5}
+            height={3}
             onBlur={(x) => act('type', { newType: x })}
-            backgroundColor={paperColor}
+            backgroundColor={fieldColor}
           />
           <h3>Additional Information</h3>
           <TextArea
             value={contrabandDetails}
             fluid
-            height={10}
+            height={5}
             onBlur={(x) => act('detail', { newDetail: x })}
-            backgroundColor={paperColor}
+            backgroundColor={fieldColor}
           />
         </Section>
       </Window.Content>
